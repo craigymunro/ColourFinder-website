@@ -1,0 +1,3 @@
+[submodule "ColourFinder"]
+	path = ColourFinder
+	url = git@github.com:craigymunro/ColourFinder.git
