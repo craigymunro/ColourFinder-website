@@ -1,44 +1,14 @@
 <html>
 <head>
 	<title>ColourFinder</title>
+
+	<link rel="stylesheet/less" type="text/css" href="less/base.less" />
+	
 	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
 	<script src="lib/ColourFinder/ColourFinder.js"></script>
+	<script src="lib/less/dist/less-1.5.0.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<style>
-		* { box-sizing: border-box; }
-		
-		body
-		{
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			padding: 1.5em;
-			color: #404040;
-		}
-		
-		span
-		{
-			display: block;
-			float: left;
-			color: white;
-			padding: .5em;
-		}
-		
-		#debug,
-		pre
-		{
-			clear: both;
-			padding-top: 1em;
-		}
-		
-		pre
-		{
-			background-color: #606060;
-			color: white;
-			font-family: monospace;
-			padding: 1em;
-		}
-	</style>
-	
 	<h1>ColourFinder</h1>
 	<p>Lightweight library to extract the dominant colour palette from an image. Uses Javascript and Canvas.</p>
 	
