@@ -1,11 +1,18 @@
+@medium: ~"only screen and (min-width : 768px)";
+@large: ~"only screen and (min-width : 1260px)";
+@min-width: 300px;
+@max-width: 1280px;
+
 * { box-sizing: border-box; }
 
 body
 {
 	margin: 0;
 	padding: 0;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #404040;
+	font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: white;
+	-webkit-font-smoothing: antialiased;
+	min-width: @min-width;
 }
 
 .page
@@ -13,63 +20,54 @@ body
 	margin: 0 auto;
 }
 
+.button
+{
+	display: inline-block;
+	background-color: rgba(255,255,255,.2);
+	color: black;
+	padding: .5em 1em;
+	text-decoration: none;
+	border-radius: .2em;
+}
+
 .hero
 {
-	background-color: #303030;
+	background-color: #404040;
 	color: white;
 	float: left;
 	width: 100%;
 	clear: both;
 	text-align: center;
-	padding: 8em 1em;
-	-webkit-font-smoothing: antialiased;
+	padding: 12em 1em;
 	
 	> div
 	{
 		margin: 0 auto;
-		max-width: 1280px;
+		max-width: @max-width;
 		
-		> *
+		> h1,
+		> p
 		{
 			margin: 0;
 			padding: 0;
 		}
 		
+		> h1
+		{
+			font-size: 2.6em;
+			color: white;
+		}
+		
 		> p
 		{
-			margin-bottom: 3em;
+			margin-bottom: 2em;
 		}
 		
 		> a
 		{
-			padding: .5em;
-			background-color: #e0e0e0;
-			color: blue;
+			margin: 0 .5em;
 		}
 	}
-}
-
-span
-{
-	display: block;
-	float: left;
-	color: white;
-	padding: .5em;
-}
-
-#debug,
-pre
-{
-	clear: both;
-	padding-top: 1em;
-}
-
-pre
-{
-	background-color: #606060;
-	color: white;
-	font-family: monospace;
-	padding: 1em;
 }
 
 section
@@ -77,67 +75,150 @@ section
 	float: left;
 	width: 100%;
 	clear: both;
+	padding: 2em 0;
+
+	> div
+	{
+		max-width: @max-width;
+		margin: 0 auto;
+		
+		> h2
+		{
+			text-align: center;
+			color: white;
+			margin: 0;
+			padding: 0;
+			font-size: 1.8em;
+		}
+	}
+
+	&.what
+	{
+		background-color: #505050;
+		text-align: center;
+	}
+	
+	&.examples
+	{
+		background-color: #606060;
+	}
+
+	&.usage
+	{
+		background-color: #707070;
+		
+		> div
+		{		
+			> pre
+			{
+				color: white;
+				font-family: monospace;
+				padding: 1.5em;
+				background-color: #606060;
+				white-space: normal;
+				
+				@media @medium
+				{
+					//white-space: pre;
+				}
+			}
+
+		}
+	}
+
 }
 
 .example
 {
 	float: left;
 	width: 100%;
-	height: 30em;
-	padding: 3em;
-	border-bottom: 1px solid #e0e0e0;
-	transition: .3s;
+
+	@media @medium
+	{
+		width: 50%;
+	}
+
+	@media @large
+	{
+		width: 33.333%;
+	}
+	
+	padding: 1.5em;
 	
 	> div
 	{
+		padding: 1.5em;
 		float: left;
-		width: 50%;		
-		height: 100%;
-		
-		&:first-of-type
+		margin: 0 auto;
+		transition: .3s;
+				
+		@media @medium
 		{
-			background-color: rgba(0,0,0,.1);
-			> img
-			{
-				display: block;
-				max-width: 90%;
-				max-height: 90%;
-				margin: auto auto;
-				text-align: center;
-			}
+			height: 30.5em;		
 		}
 
-		&:last-of-type
+		@media @large
 		{
-			padding-left: 3em;
+			height: 25em;
+		}
 			
-			> a
-			{
-				display: block;
-				float: left;
-				background-color: #e0e0e0;
-				padding: .5em;
-				text-decoration: none;
-			}
+		> div
+		{
+			float: left;
+			width: 100%;		
 			
-			> .blocks
+			&:first-of-type
 			{
-				display: block;
-
-				> div
+				height: 0;
+				padding-bottom: 56.25%;
+				overflow: hidden;
+				margin-bottom: 1.5em;
+				
+				> a
 				{
-					float: left;
-					clear: both;
-					padding: .5em; 
-					color: white;
-					margin-bottom: .25em;
-					border: 1px solid black;
-					font-size: .85em;
-					
-					&:first-of-type
+					> img
 					{
-						//padding: 2em;
+						display: block;
+						max-width: 100%;
+						margin: 0 auto;
+						text-align: center;
 					}
+				}
+			}
+	
+			&:last-of-type
+			{
+				> .button
+				{
+					background-color: white;
+					font-size: .85em;
+				}
+				
+				> .blocks
+				{
+					display: block;
+					float: left;
+					width: 100%;
+					margin-bottom: 1em;
+	
+					> div
+					{
+						float: left;
+						width: 10%;
+						height: 2.5em;
+						color: white;
+						font-size: .85em;
+						
+						&:first-of-type
+						{
+							//padding: 2em;
+						}
+					}
+				}
+				
+				> .details
+				{
+					font-size: .85em;
 				}
 			}
 		}
