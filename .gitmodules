@@ -1,3 +1,6 @@
-[submodule "ColourFinder"]
-	path = ColourFinder
+[submodule "lib/less"]
+	path = lib/less
+	url = https://github.com/less/less.js.git
+[submodule "lib/ColourFinder"]
+	path = lib/ColourFinder
 	url = git@github.com:craigymunro/ColourFinder.git

@@ -2,7 +2,7 @@
 <head>
 	<title>ColourFinder</title>
 	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
-	<script src="ColourFinder/ColourFinder.js"></script>
+	<script src="lib/ColourFinder/ColourFinder.js"></script>
 </head>
 <body>
 	<style>
