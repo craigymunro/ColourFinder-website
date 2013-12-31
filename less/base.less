@@ -2,9 +2,51 @@
 
 body
 {
+	margin: 0;
+	padding: 0;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding: 1.5em;
 	color: #404040;
+}
+
+.page
+{
+	margin: 0 auto;
+}
+
+.hero
+{
+	background-color: #303030;
+	color: white;
+	float: left;
+	width: 100%;
+	clear: both;
+	text-align: center;
+	padding: 8em 1em;
+	-webkit-font-smoothing: antialiased;
+	
+	> div
+	{
+		margin: 0 auto;
+		max-width: 1280px;
+		
+		> *
+		{
+			margin: 0;
+			padding: 0;
+		}
+		
+		> p
+		{
+			margin-bottom: 3em;
+		}
+		
+		> a
+		{
+			padding: .5em;
+			background-color: #e0e0e0;
+			color: blue;
+		}
+	}
 }
 
 span
@@ -28,4 +70,76 @@ pre
 	color: white;
 	font-family: monospace;
 	padding: 1em;
+}
+
+section
+{
+	float: left;
+	width: 100%;
+	clear: both;
+}
+
+.example
+{
+	float: left;
+	width: 100%;
+	height: 30em;
+	padding: 3em;
+	border-bottom: 1px solid #e0e0e0;
+	transition: .3s;
+	
+	> div
+	{
+		float: left;
+		width: 50%;		
+		height: 100%;
+		
+		&:first-of-type
+		{
+			background-color: rgba(0,0,0,.1);
+			> img
+			{
+				display: block;
+				max-width: 90%;
+				max-height: 90%;
+				margin: auto auto;
+				text-align: center;
+			}
+		}
+
+		&:last-of-type
+		{
+			padding-left: 3em;
+			
+			> a
+			{
+				display: block;
+				float: left;
+				background-color: #e0e0e0;
+				padding: .5em;
+				text-decoration: none;
+			}
+			
+			> .blocks
+			{
+				display: block;
+
+				> div
+				{
+					float: left;
+					clear: both;
+					padding: .5em; 
+					color: white;
+					margin-bottom: .25em;
+					border: 1px solid black;
+					font-size: .85em;
+					
+					&:first-of-type
+					{
+						//padding: 2em;
+					}
+				}
+			}
+		}
+	}
 }
