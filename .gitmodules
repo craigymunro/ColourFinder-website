@@ -4,3 +4,6 @@
 [submodule "lib/less"]
 	path = lib/less
 	url = git@github.com:less/less.js.git
+[submodule "lib/FontAwesome"]
+	path = lib/FontAwesome
+	url = git@github.com:FortAwesome/Font-Awesome.git
