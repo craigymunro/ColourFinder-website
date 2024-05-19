@@ -2,14 +2,11 @@
 <head>
 	<title>ColourFinder</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-	<link rel="stylesheet/less" type="text/css" href="less/base.less" />
+	<link rel="stylesheet" type="text/css" href="static/css/base.css" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
 	<link href="prism.css" rel="stylesheet" />	
 	<script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
-	<script src="lib/ColourFinder/ColourFinder.js"></script>
-
-	<script src="lib/less/dist/less-1.5.0.min.js" type="text/javascript"></script>
-
+	<script src="static/ColourFinder.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
 	<script>
 	  WebFont.load({
@@ -24,9 +21,9 @@
 		<h1>ColourFinder</h1>		
 		<nav>
 			<div>
-				<? foreach(explode(",", "Home,Examples,Usage,Contact") as $item) { ?>
-					<a href="#<?=strtolower($item)?>" data-shortcut="<?=strtolower($item)?>" class="<?=strtolower($item)?> button"><?=$item?></a>
-				<? } ?>
+				<?php foreach(explode(",", "Home,Examples,Usage,Contact") as $item) { ?>
+					<a href="#<?php echo strtolower($item)?>" data-shortcut="<?php echo strtolower($item)?>" class="<?php echo strtolower($item)?> button"><?php echo $item?></a>
+				<?php } ?>
 			</div>
 		</nav>
 	</header>
@@ -64,22 +61,22 @@
 					Here are some examples of <em>ColourFinder</em> in action. Here it computes the average colour, dominant colour, and colour palette for each image.
 				</p>
 				
-				<? foreach(explode(",", "opera,desert,ice,city,ducks,frog,sunset,building,shore,italy") as $key => $image) { ?>
-					<div class="example" id="canvas-<?=$key?>">
+				<?php foreach(explode(",", "opera,desert,ice,city,ducks,frog,sunset,building,shore,italy") as $key => $image) { ?>
+					<div class="example" id="canvas-<?php echo $key?>">
 						<div class="frame">
 							<div class="canvas">
-								<a href="javascript:findColour(<?=$key?>);"><img src="images/<?=$image?>.jpg" id="example-<?=$key?>"/></a>
+								<a href="javascript:findColour(<?php echo $key?>);"><img src="images/<?php echo $image?>.jpg" id="example-<?php echo $key?>"/></a>
 							</div>
 							<div>
-								<a href="javascript:findColour(<?=$key?>);" class="button"><i class="fa fa-tint"></i> Extract colours</a>
+								<a href="javascript:findColour(<?php echo $key?>);" class="button"><i class="fa fa-tint"></i> Extract colours</a>
 								<div class="blocks">
-									<? for($i = 0; $i < 10; $i++) { ?><div></div><? } ?>
+									<?php for($i = 0; $i < 10; $i++) { ?><div></div><?php } ?>
 								</div>
 								<div class="details"></div>
 							</div>
 						</div>
 					</div>			
-				<? } ?>
+				<?php } ?>
 				
 				<div class="example" id="canvas-example">
 				
@@ -89,7 +86,7 @@
 	
 		<section class="usage">
 			<a name="usage"></a>
-<?
+<?php
 $base = <<<BASE
 <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js"></script>
 <script src="ColourFinder.js"></script>
@@ -135,21 +132,21 @@ PAL;
 				<div class="func">
 					<div>
 						<h3>Get the dominant colour in an image</h3>
-						<pre><code class="language-javascript"><?=nl2br(htmlentities($base . $dom . $end));?></code></pre>
+						<pre><code class="language-javascript"><?php echo nl2br(htmlentities($base . $dom . $end));?></code></pre>
 					</div>
 				</div>
 
 				<div class="func">
 					<div>
 						<h3>Get the average colour of an image</h3>
-						<pre><code class="language-javascript"><?=nl2br(htmlentities($base . $ave . $end));?></code></pre>
+						<pre><code class="language-javascript"><?php echo nl2br(htmlentities($base . $ave . $end));?></code></pre>
 					</div>
 				</div>
 
 				<div class="func">
 					<div>
 						<h3>Get the colour palette of an image</h3>
-						<pre><code class="language-javascript"><?=nl2br(htmlentities($base . $pal . $end));?></code></pre>
+						<pre><code class="language-javascript"><?php echo nl2br(htmlentities($base . $pal . $end));?></code></pre>
 					</div>
 				</div>
 				
