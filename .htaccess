@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	# Stop the .git directory from being accessible
+	RedirectMatch 404 /\.git
+</IfModule>
